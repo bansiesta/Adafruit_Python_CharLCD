@@ -114,7 +114,7 @@ value = 1.0
 
 # Loop through all RGB colors.
 lcd.clear()
-print 'Press Ctrl-C to quit.'
+print('Press Ctrl-C to quit.')
 while True:
 	# Convert HSV to RGB colors.
 	red, green, blue = hsv_to_rgb((hue, saturation, value))
