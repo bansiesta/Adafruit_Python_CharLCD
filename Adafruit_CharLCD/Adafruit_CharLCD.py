@@ -246,6 +246,13 @@ class Adafruit_CharLCD(object):
             else:
                 self.write8(ord(char), True)
 
+    def message_line(self, text, line):
+        """Write text to display on specific line."""
+        col = 0 if self.displaymode & LCD_ENTRYLEFT > 0 else self._cols-1
+        self.set_cursor(col, line)
+        for char in text:
+            self.write8(ord(char), True)
+
     def set_backlight(self, backlight):
         """Enable or disable the backlight.  If PWM is not enabled (default), a
         non-zero backlight value will turn on the backlight and a zero value will
